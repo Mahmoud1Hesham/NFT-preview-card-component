@@ -1,0 +1,139 @@
+:root {
+  /* primary 
+    Soft blue: hsl(215, 51%, 70%)
+    - Cyan: hsl(178, 100%, 50%)
+   secoundary 
+    Very dark blue (main BG): hsl(217, 54%, 11%)
+- Very dark blue (card BG): hsl(216, 50%, 16%)
+- Very dark blue (line): hsl(215, 32%, 27%)
+- White: hsl(0, 0%, 100%) */
+  --main-bg: hsl(217, 54%, 11%);
+  --card-bg: hsl(216, 50%, 16%);
+  --p-color: hsl(215, 51%, 70%);
+  --line-color: hsl(215, 32%, 27%);
+  --li-color: hsl(178, 100%, 50%);
+  --overlay-color: hsla(178, 100%, 50%, 0.4);
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+}
+ul {
+  list-style: none;
+}
+p {
+  font-size: 18px;
+  font-weight: 300;
+}
+body {
+  background-color: var(--main-bg);
+  font-family: "Outfit", sans-serif;
+}
+.card {
+  width: 345px;
+  height: 585px;
+  background-color: var(--card-bg);
+  padding: 20px;
+  border-radius: 15px;
+  margin: 50px auto;
+  box-shadow: 0px 0px 13px 15px rgb(0 0 0 / 25%);
+}
+.card .img {
+  position: relative;
+}
+.card .img img {
+  width: 100%;
+  height: 60%;
+  border-radius: 10px;
+}
+.card .img .cntr {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 98%;
+  border-radius: 10px;
+  visibility: hidden;
+  transition: .3s;
+}
+.content {
+  padding: 10px 2px;
+}
+.content h2 {
+  color: white;
+  padding: 10px 0 12px 0;
+}
+.content p {
+  color: var(--p-color);
+  line-height: 1.5;
+}
+.content .info {
+  display: flex;
+  justify-content: space-between;
+  margin: 20px 0;
+  align-items: center;
+  position: relative;
+  color: var(--p-color);
+}
+.content .info li:first-child {
+  margin-left: 17px;
+  color: var(--li-color);
+}
+.content .info li #one {
+  position: absolute;
+  top: 1;
+  left: 0;
+}
+.content .info li #two {
+  position: absolute;
+  top: 6%;
+  left: 69%;
+}
+.content .id {
+  border-top: 2px solid;
+  border-color: var(--line-color);
+  display: flex;
+  justify-content: start;
+  padding: 20px 0;
+  align-items: center;
+}
+.content .id img {
+  width: 10%;
+  border: 1px solid white;
+  border-radius: 50%;
+  margin-right: 20px;
+}
+.content .id h4 {
+  color: var(--p-color);
+  font-weight: 300;
+}
+.content .id h4 span {
+  color: white;
+}
+.card .content h2:hover,
+.card .content .id h4 span:hover {
+  color: var(--li-color);
+}
+.card .content h2,
+.card .content .id h4 span {
+  transition: 0.3s ease;
+}
+.card .img:hover .cntr {
+  visibility: visible;
+  background-color: var(--overlay-color);
+  cursor: pointer;
+}
+.attribution {
+  font-size: 11px;
+  text-align: center;
+  margin-top: 90px;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
